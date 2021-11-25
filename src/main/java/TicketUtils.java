@@ -74,7 +74,7 @@ public class TicketUtils {
     }
 
     public void displayPerTicket(final Ticket ticket) {
-        CMDStrings.displaySubsetOfTickets(Collections.singletonList(ticket), 0, 1);
+        CMDStrings.displaySubsetOfTickets(Collections.singletonList(ticket), 0, 1, true);
     }
 
     public void displayTickets() {

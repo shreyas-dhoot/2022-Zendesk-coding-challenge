@@ -3,6 +3,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.lang.reflect.Field;
 import java.util.Date;
 
 @Getter
@@ -18,8 +19,24 @@ public class Ticket {
     private String description;
     private String priority;
     private String status;
-    private Long submitter_id;
     private Long assignee_id;
+    private Long submitter_id;
+
+
+    public String showFullInfo() {
+        StringBuffer s = new StringBuffer();
+        Field[] fields = this.getClass().getDeclaredFields();
+        for (Field f : fields) {
+            try {
+                if(f.get(this) != null) {
+                    s.append(String.format("%-20s%s%n", f.getName(), f.get(this)));
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return s.toString();
+    }
 
     @Override
     public String toString() {

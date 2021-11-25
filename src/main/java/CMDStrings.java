@@ -54,12 +54,12 @@ public class CMDStrings {
                     case CMDStrings.DISPAY_NEXT_OPTION:
                         start += PAGE_SIZE;
                         end += PAGE_SIZE;
-                        CMDStrings.displaySubsetOfTickets(results, start, end);
+                        CMDStrings.displaySubsetOfTickets(results, start, end, false);
                         break;
                     case CMDStrings.DISPAY_PREV_OPTION:
                         start -= PAGE_SIZE;
                         end -= PAGE_SIZE;
-                        CMDStrings.displaySubsetOfTickets(results,start, end);
+                        CMDStrings.displaySubsetOfTickets(results,start, end, false);
                         break;
                     case CMDStrings.QUIT:
                         System.exit(0);
@@ -104,9 +104,15 @@ public class CMDStrings {
 
     public static void displaySubsetOfTickets(final List<Ticket> results,
                                               final int start,
-                                              final int end) {
+                                              final int end,
+                                              final boolean showFullInfo) {
         for(int index = Math.max(start, 0); index < Math.min(end, results.size()); index++) {
-            System.out.println(results.get(index) + "\n-----------------------------------------\n");
+            if (!showFullInfo) {
+                System.out.println(results.get(index) + "\n-----------------------------------------\n");
+            }
+            else {
+                System.out.println(results.get(index).showFullInfo() + "\n-----------------------------------------\n");
+            }
         }
 
     }
