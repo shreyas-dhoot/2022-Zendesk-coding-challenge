@@ -60,6 +60,7 @@ public class TestTickets {
     public void testPerTicket() throws Exception {
         TicketUtils tu = new TicketUtils(httpConnections);
         Ticket ticket = tu.fetchPerTicket("101");
+        Assert.assertEquals(showFullInfo, ticket.showFullInfo());
         checkTicket(ticket);
     }
 
@@ -70,5 +71,15 @@ public class TestTickets {
         Assert.assertEquals(421865154992L, (long) ticket.getAssignee_id());
 
     }
+
+    final String showFullInfo = "id                  101\n" +
+            "created_at          Fri Nov 19 15:50:40 CST 2021\n" +
+            "subject             in nostrud occaecat consectetur aliquip\n" +
+            "description         Esse esse quis ut esse nisi tempor sunt. Proident officia incididunt cupidatat laborum ipsum duis. Labore qui labore elit consequat.\n" +
+            "\n" +
+            "Do id nisi qui et fugiat culpa veniam consequat ad amet ut nisi ipsum. Culpa exercitation consectetur adipisicing sunt reprehenderit. Deserunt consequat aliquip tempor anim officia elit proident commodo consequat aute. Magna enim esse tempor incididunt ipsum dolore Lorem cupidatat incididunt.\n" +
+            "status              open\n" +
+            "assignee_id         421865154992\n" +
+            "submitter_id        421865154992\n";
 
 }
