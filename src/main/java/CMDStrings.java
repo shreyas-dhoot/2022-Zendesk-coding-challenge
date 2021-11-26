@@ -22,7 +22,7 @@ public class CMDStrings {
         s.append("Select an option\n")
                 .append("\t\t* Press " + VIEW_ALL_TICKET + " to view all tickets\n")
                 .append("\t\t* Press " + VIEW_A_TICKET + " to view a ticket\n")
-                .append("\t\t* Type '" + QUIT + "' to close the application\n\n");
+                .append("\t\t* Type '" + QUIT + "' to close the application\n");
         System.out.println(s);
     }
 

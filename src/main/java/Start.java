@@ -42,7 +42,7 @@ public class Start {
                     System.out.println("Please try again");
                 } catch (UnknownHostException e) {
                     System.out.println("Server is not reachable!");
-                    System.out.println("Please try again");
+                    System.out.println("Please try again.\n");
                 }
             } while (!option.equals(CMDStrings.QUIT));
     }
