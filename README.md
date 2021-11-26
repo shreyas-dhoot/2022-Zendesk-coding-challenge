@@ -22,4 +22,9 @@
 ## Data
 - Used tickets.json to upload data on zendesk platform
 - Used the API responses to write tests
+- Added screenshots in the screenshot folder
+
+# Handling of errors
+- If the status code of response in anything other than 200, it gives an error but the program continues
+- If the user inputs a wrong command, it asks to enter again
 
