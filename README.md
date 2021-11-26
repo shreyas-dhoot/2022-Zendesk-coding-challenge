@@ -16,8 +16,13 @@
 - Apache Maven 3.8.3 (Should work on lower version too)
 
 ## How to run
-- Set username and password in config.properties
-- Open the project in an IDE and run Start.java
+- Method 1
+  - Set username and password in config.properties
+  - Open the project in an IDE and run Start.java
+- Method 2
+  - Set username and password in config.properties
+  - mvn clean install -Dmaven.test.skip=true
+  - java -jar target/zendesk-challenge-1.0-SNAPSHOT.jar
 
 ## Data
 - Used tickets.json to upload data on zendesk platform
