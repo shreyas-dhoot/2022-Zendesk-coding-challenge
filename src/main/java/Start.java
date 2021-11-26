@@ -37,9 +37,9 @@ public class Start {
                             System.out.println("Wrong Option. Please try again.");
                     }
                 } catch (APIFailedException e) {
-                    System.out.println("Unable to execute command.");
-                    System.out.println("Root cause : " + e.getLocalizedMessage());
-                    System.out.println("Please try again");
+                    System.out.println("Failed to execute command.");
+                    System.out.println("Error : " + e.getLocalizedMessage());
+                    System.out.println("Please try again\n");
                 } catch (UnknownHostException e) {
                     System.out.println("Server is not reachable!");
                     System.out.println("Please try again.\n");
