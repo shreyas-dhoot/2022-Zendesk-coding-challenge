@@ -49,6 +49,7 @@ public class CMDStrings {
             int end = 0;
             boolean checkNextPossible = true;
             boolean checkPrevPossible = false;
+            System.out.println("Total records: " + results.size() + "\n");
             do {
                 switch (option) {
                     case CMDStrings.DISPAY_NEXT_OPTION:
@@ -59,7 +60,7 @@ public class CMDStrings {
                     case CMDStrings.DISPAY_PREV_OPTION:
                         start -= PAGE_SIZE;
                         end -= PAGE_SIZE;
-                        CMDStrings.displaySubsetOfTickets(results,start, end, false);
+                        CMDStrings.displaySubsetOfTickets(results, start, end, false);
                         break;
                     case CMDStrings.QUIT:
                         System.exit(0);
@@ -96,7 +97,6 @@ public class CMDStrings {
                 }
 
             } while (!option.equals(CMDStrings.EXIT));
-            System.out.println("Total records: " + results.size() + "\n");
         } else {
             System.out.println("No results found");
         }
