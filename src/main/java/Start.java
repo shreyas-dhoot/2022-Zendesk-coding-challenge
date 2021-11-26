@@ -1,3 +1,4 @@
+import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Start {
@@ -38,8 +39,10 @@ public class Start {
                 } catch (APIFailedException e) {
                     System.out.println("Unable to execute command.");
                     System.out.println("Root cause : " + e.getLocalizedMessage());
-                } catch (Exception e) {
-                    e.printStackTrace();
+                    System.out.println("Please try again");
+                } catch (UnknownHostException e) {
+                    System.out.println("Server is not reachable!");
+                    System.out.println("Please try again");
                 }
             } while (!option.equals(CMDStrings.QUIT));
     }
