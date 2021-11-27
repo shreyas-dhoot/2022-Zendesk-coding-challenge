@@ -10,11 +10,13 @@
 ![Alt text](Screenshots/zendesk.png?raw=true "Design")
 
 ## Design Decisions
-- As the API for tickets is already paginated, pagination API is not used
+- As the API response received from server is already paginated, pagination when firing the API is not done
 - For a good UX experience, it only shows 25 pages in list view
 - One can navigate to next ('n') and previous ('p') page when choosing Option 1
 - You can quit anytime by typing 'quit'
 - Check out the screenshots in the screenshots folder
+- When option 1 is selected only the important fields are shown as it might overwhelm the user if lot of information is shown
+- When option 2 is selected all the fields are shown because the user wants to know more about that ticket id. 
 
 ### Testing
 - Manual / Regression testing
