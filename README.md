@@ -19,6 +19,7 @@
 - Method 1
   - Set username and password in config.properties
   - Open the project in an IDE and run Start.java
+  - If dependencies are not getting resolved, invalidate cache (in IDE) and restart
 - Method 2
   - Set username and password in config.properties
   - mvn clean install -Dmaven.test.skip=true

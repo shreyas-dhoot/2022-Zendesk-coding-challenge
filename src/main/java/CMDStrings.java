@@ -11,6 +11,7 @@ public class CMDStrings {
 
     public static final String EXIT = "exit";
     public static final String QUIT = "quit";
+
     public static void StartScreen() {
         StringBuilder s = new StringBuilder();
         s.append("Welcome to Zendesk Ticket Viewer\n");
@@ -40,15 +41,19 @@ public class CMDStrings {
         System.out.println(s);
     }
 
+    /**
+     * Display tickets page wise. To go to the next page press, the user has to input 'n', for prev 'p', to go the main menu 'exit'
+     * and to quit from application 'quit'
+     * @param results - list of all tickets
+     */
     public static void displayTickets(List<Ticket> results) {
         if (results.size() > 0) {
-            int done = 0;
             Scanner scan = new Scanner(System.in).useDelimiter("\n");
             String option = CMDStrings.DISPAY_NEXT_OPTION;
             int start = -1 * PAGE_SIZE;
             int end = 0;
-            boolean checkNextPossible = true;
-            boolean checkPrevPossible = false;
+            boolean checkNextPossible;
+            boolean checkPrevPossible;
             System.out.println("Total records: " + results.size() + "\n");
             do {
                 switch (option) {
@@ -102,6 +107,14 @@ public class CMDStrings {
         }
     }
 
+    /**
+     * Displays information related to tickets in a user-friendly way
+     * @param results - Contains all the tickets.
+     * @param start - start index
+     * @param end - end index
+     * @param showFullInfo - showFullInfo is true, all the fields present in the ticket class is shown. If false, only
+     *                     the important ones are shown.
+     */
     public static void displaySubsetOfTickets(final List<Ticket> results,
                                               final int start,
                                               final int end,
