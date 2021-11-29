@@ -34,9 +34,11 @@
   - Open the project in an IDE and run ```Start.java```
   - If dependencies are not getting resolved, invalidate cache (in IDE) and restart
 - Method 2
+  - ```git clone https://github.com/shreyas-dhoot/2022-Zendesk-coding-challenge.git```
+  - ```cd 2022-Zendesk-coding-challenge/```  
   - Set username and password in config.properties
   - ```mvn clean install -Dmaven.test.skip=true```
-  - ```java -jar target/zendesk-challenge-1.0-SNAPSHOT.jar```
+  - ```java -jar target/Zendesk-challenge-1.0-SNAPSHOT.jar```
 
 ## Data
 - Used tickets.json to upload data on zendesk platform
